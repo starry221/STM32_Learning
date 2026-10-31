@@ -1,25 +1,26 @@
-#include <stdio.h>
-#include <stdint.h>
-#include "starry.h"
-#include <windows.h>
-
+#include "stm32f10x.h"
+#include "OLED.h"
+#include "LED.h"
+#include "Key.h"
+#include "PWM.h"
+#include "Delay.h"
 
 int main(void)
-{ 
+{
+	PWM_Init();
+	OLED_Init();
+	OLED_Clear();
+	Key_Init();
+	u8 key;
+
 	while(1)
 	{
-		Nothing();
-		Man_TypeDef man;
-		man.Lets=creative;
-		man.Goooo=Op;
-		man.GUNMU=sologay;
-		Taffy(&man);
-		if(c==67)
+		key=Key_GetNum();
+		if(key==1)
 		{
-			a=b=c=0;
+			ctrl();
 		}
-		Sleep(200);
+
+		Delay_ms(1);
 	}
-	
-	return 0;
 }

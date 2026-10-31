@@ -1,0 +1,14 @@
+#ifndef __LED_H
+#define __LED_H
+#include "stm32f10x.h"                  // Device header
+
+void LED_Init(void);
+//LED引脚初始化函数
+
+void FlowLED_Reset(void);
+
+void FlowLED(void);
+
+u8 Getloc(void);
+
+#endif
